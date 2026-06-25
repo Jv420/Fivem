@@ -1,0 +1,16 @@
+Plaats hier je legaal verkregen modelbestanden.
+
+Verplichte bestandsnamen:
+
+bmw520f11.yft
+bmw520f11_hi.yft
+bmw520f11.ytd
+
+Optioneel:
+
+bmw520f11+hi.ytd
+bmw520f11_livery.ytd
+
+Belangrijk:
+
+De spawnnaam in alle meta files is bmw520f11. De modelbestanden moeten exact dezelfde naam gebruiken.
