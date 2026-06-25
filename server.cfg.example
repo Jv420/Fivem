@@ -1,5 +1,5 @@
 # =========================================================
-# Jv420 FiveM Server Config - QBCore Starter
+# Jv420 FiveM Server Config - Full Starter Serverpack
 # Kopieer dit bestand naar server.cfg en vul je eigen gegevens in.
 # =========================================================
 
@@ -8,21 +8,19 @@ endpoint_add_tcp "0.0.0.0:30120"
 endpoint_add_udp "0.0.0.0:30120"
 sv_maxclients 48
 set steam_webApiKey "none"
-sets tags "roleplay, qbcore, economy, dutch, nl, starter"
+sets tags "roleplay, qbcore, economy, dutch, nl, starter, cars, jobs"
 sets locale "nl-NL"
 sv_hostname "Jv420 Roleplay | Nederlandse Economy RP"
 sets sv_projectName "Jv420 FiveM"
-sets sv_projectDesc "Nederlandse QBCore economy roleplay server"
+sets sv_projectDesc "Nederlandse QBCore economy roleplay server met starter jobs, HUD, bank en voertuigen"
 
 # OneSync
 set onesync on
 
 # Database
-# Maak eerst een database aan, bijvoorbeeld fivem_qbcore.
 set mysql_connection_string "mysql://root:password@localhost/fivem_qbcore?charset=utf8mb4"
 
 # License key
-# Haal je key op via https://keymaster.fivem.net/
 sv_licenseKey "JOUW_FIVEM_LICENSE_KEY_HIER"
 
 # Security / privacy
@@ -80,9 +78,21 @@ ensure qb-vehiclekeys
 ensure qb-policejob
 ensure qb-ambulancejob
 
-# Eigen resources
+# Eigen Jv420 resources
 ensure jv-loading
 ensure jv-discordlogs
+ensure jv-notify
+ensure jv-adminhelp
+ensure jv-hud
+ensure jv-bank
+ensure jv-starterjobs
+ensure jv-weaponshop
+ensure jv-garage
+ensure jv-vehicles
+ensure jv-dealership
+ensure jv-carspawner
+ensure jv-service
+ensure jv-rpcommands
 
 # =========================================================
 # Admin permissions
