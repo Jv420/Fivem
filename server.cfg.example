@@ -1,0 +1,98 @@
+# =========================================================
+# Jv420 FiveM Server Config - QBCore Starter
+# Kopieer dit bestand naar server.cfg en vul je eigen gegevens in.
+# =========================================================
+
+# Server basis
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+sv_maxclients 48
+set steam_webApiKey "none"
+sets tags "roleplay, qbcore, economy, dutch, nl, starter"
+sets locale "nl-NL"
+sv_hostname "Jv420 Roleplay | Nederlandse Economy RP"
+sets sv_projectName "Jv420 FiveM"
+sets sv_projectDesc "Nederlandse QBCore economy roleplay server"
+
+# OneSync
+set onesync on
+
+# Database
+# Maak eerst een database aan, bijvoorbeeld fivem_qbcore.
+set mysql_connection_string "mysql://root:password@localhost/fivem_qbcore?charset=utf8mb4"
+
+# License key
+# Haal je key op via https://keymaster.fivem.net/
+sv_licenseKey "JOUW_FIVEM_LICENSE_KEY_HIER"
+
+# Security / privacy
+sv_scriptHookAllowed 0
+set sv_enforceGameBuild 3258
+
+# Voice
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+setr voice_defaultCycle "F11"
+setr voice_defaultRadioVolume 60
+setr voice_defaultPhoneVolume 70
+
+# QBCore language
+setr qb_locale "nl"
+
+# =========================================================
+# Resource start volgorde
+# =========================================================
+
+# FiveM default
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure basic-gamemode
+ensure hardcap
+
+# Database / libraries
+ensure oxmysql
+ensure ox_lib
+
+# QBCore core
+ensure qb-core
+
+# Overextended / inventory / target
+ensure ox_target
+ensure ox_inventory
+
+# QBCore standaard resources
+ensure qb-multicharacter
+ensure qb-spawn
+ensure qb-apartments
+ensure qb-clothing
+ensure qb-weathersync
+ensure qb-smallresources
+ensure qb-hud
+ensure qb-management
+ensure qb-banking
+ensure qb-shops
+ensure qb-phone
+ensure qb-garages
+ensure qb-vehiclesales
+ensure qb-vehiclekeys
+ensure qb-policejob
+ensure qb-ambulancejob
+
+# Eigen resources
+ensure jv-loading
+ensure jv-discordlogs
+
+# =========================================================
+# Admin permissions
+# Vervang license:xxxxx door jouw eigen identifier.
+# Gebruik in server console: status
+# =========================================================
+
+add_ace group.admin command allow
+add_ace group.admin command.quit deny
+add_principal identifier.license:VUL_JE_LICENSE_IDENTIFIER_HIER group.admin
+
+# QBCore permissies
+add_ace resource.qb-core command allow
