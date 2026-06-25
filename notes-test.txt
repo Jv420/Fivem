@@ -1,12 +1,13 @@
 # Jv420 RP workmap
 
-Deze file is tijdelijk gebruikt als veilige bundel voor extra serverpack ideeen.
+Deze file is gebruikt als veilige bundel voor extra serverpack ideeen en startermodules.
 
 ## Luxe opties
 
 - Maak luxe transport duur en zeldzaam.
 - Gebruik aparte showroom of catalogus.
 - Laat spelers sparen via jobs en bedrijven.
+- Maak prijzen hoog zodat de economie langer leuk blijft.
 
 ## ID en contact
 
@@ -28,38 +29,166 @@ Service A:
 - garage punt
 - factuur systeem
 - meldkamer/logs
+- rangensysteem
+- uitrusting punt
 
 Service B:
 - behandeling RP
 - transport RP
 - facturen
 - garage punt
+- bedden/ziekenhuis flow
 
 Service C:
 - reddings RP
 - wegafzetting RP
 - voertuigen punt
 - event ondersteuning
+- brandweer/incident RP
 
-## Advanced RP
+## Basic player systems
 
-- Gebruik cooldowns.
-- Gebruik minimum aantal service spelers online.
-- Geef rewards server-side.
-- Zet locaties niet openbaar in docs.
-- Houd payouts laag in het begin.
+Reports:
+- /report tekst
+- staff krijgt melding
+- log naar Discord later
 
-## Voertuig mechanics
+Scoreboard:
+- /players
+- toon aantal spelers online
+- toon servernaam
 
-- Lockpick als minigame/resource later.
-- Hotwire als kanssysteem met cooldown.
-- Chopshop als RP-route met lage payouts en logs.
+Billing:
+- /bill id bedrag reden
+- speler betaalt met bank
+- handig voor jobs en bedrijven
 
-## Volgende stap
+Community service:
+- staff zet speler taakstraf
+- speler moet taken doen
+- daarna vrijgeven
 
-Maak later aparte resources:
-- jv-id
-- jv-phone
-- jv-premiumshop
-- jv-servicejobs
-- jv-advancedrp
+## Vehicle systems
+
+Fuel:
+- verbruik per voertuig
+- tankstations later met coords
+- betaling via cash/bank
+
+Keys:
+- eigenaar krijgt sleutel
+- /givekey id
+- lock/unlock voertuig
+
+Doorlocks:
+- deuren per job/rank
+- politie/ambu/brandweer/bedrijven
+
+Lockpick:
+- minigame later
+- cooldown
+- kans op alarm
+- item verbruiken bij fail
+
+Hotwire:
+- kanssysteem
+- cooldown
+- melding naar service A bij fail
+
+Chop route:
+- alleen RP gameplay
+- lage payout
+- cooldown
+- logs
+- minimum services online
+
+## Economy systems
+
+Insurance:
+- voertuigverzekering
+- zorgverzekering
+- maandelijkse fee
+
+Crafting:
+- legale crafting
+- job crafting
+- service crafting
+- geen overpowered items
+
+Used dealership:
+- tweedehands voertuigen goedkoper
+- spelers kunnen later verkopen
+
+Company payouts:
+- bedrijf kan periodiek omzet krijgen
+- payout laag houden
+- cooldown gebruiken
+
+## Extra jobs
+
+Legal jobs:
+- vuilnisman
+- taxi
+- trucker
+- bezorger
+- visser
+- mijnwerker
+- houthakker
+- buschauffeur
+- elektricien
+
+Business jobs:
+- restaurant
+- cafe
+- garage
+- taxi bedrijf
+- transport bedrijf
+- makelaar
+
+## Items to add later
+
+Legal:
+- phone
+- radio
+- repairkit
+- lockpick_basic
+- fuel_can
+- medkit
+- bandage
+
+RP route items:
+- marked_item
+- package_a
+- package_b
+- processed_a
+- processed_b
+
+## Suggested resource names
+
+- jv-reports
+- jv-scoreboard
+- jv-billing
+- jv-fuel
+- jv-keys
+- jv-doorlocks
+- jv-serviceflow
+- jv-insurance
+- jv-crafting
+- jv-useddealer
+- jv-vehicleflow
+- jv-routes
+
+## Safe rollout order
+
+1. QBCore + ox basis
+2. HUD + bank
+3. Jobs + billing
+4. Vehicle keys + fuel
+5. Housing + companies
+6. Service jobs
+7. Advanced RP routes
+8. MLOs and vehicle packs
+
+## Belangrijk
+
+Gebruik dit als werkmap/back-up. Maak echte resources stap voor stap, test na elke resource en commit alleen zonder secrets.
