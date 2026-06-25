@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: #07101f;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  width: 720px;
+  max-width: 100%;
+  padding: 42px;
+  border-radius: 24px;
+  background: #101d33;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #8fd8ff;
+}
+
+h1 {
+  margin: 0;
+  font-size: 56px;
+}
+
+.subtitle {
+  max-width: 560px;
+  margin: 18px auto 30px;
+  color: #d8e7ff;
+  line-height: 1.6;
+}
+
+.bar {
+  height: 12px;
+  border-radius: 999px;
+  background: #263955;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 20%;
+  border-radius: 999px;
+  background: #64d2ff;
+  transition: width 0.4s ease;
+}
+
+#tip {
+  min-height: 24px;
+  margin-top: 24px;
+  color: #b8c8df;
+}
