@@ -1,1 +1,65 @@
-test
+# Jv420 RP workmap
+
+Deze file is tijdelijk gebruikt als veilige bundel voor extra serverpack ideeen.
+
+## Luxe opties
+
+- Maak luxe transport duur en zeldzaam.
+- Gebruik aparte showroom of catalogus.
+- Laat spelers sparen via jobs en bedrijven.
+
+## ID en contact
+
+Kenteken voorbeelden:
+- AB-123-C
+- 12-ABC-3
+- X-123-YY
+- J420-RP
+
+Telefoon voorbeelden:
+- 06-12345678
+- 06-42004200
+- 088-1234567
+
+## Diensten
+
+Service A:
+- duty systeem
+- garage punt
+- factuur systeem
+- meldkamer/logs
+
+Service B:
+- behandeling RP
+- transport RP
+- facturen
+- garage punt
+
+Service C:
+- reddings RP
+- wegafzetting RP
+- voertuigen punt
+- event ondersteuning
+
+## Advanced RP
+
+- Gebruik cooldowns.
+- Gebruik minimum aantal service spelers online.
+- Geef rewards server-side.
+- Zet locaties niet openbaar in docs.
+- Houd payouts laag in het begin.
+
+## Voertuig mechanics
+
+- Lockpick als minigame/resource later.
+- Hotwire als kanssysteem met cooldown.
+- Chopshop als RP-route met lage payouts en logs.
+
+## Volgende stap
+
+Maak later aparte resources:
+- jv-id
+- jv-phone
+- jv-premiumshop
+- jv-servicejobs
+- jv-advancedrp
