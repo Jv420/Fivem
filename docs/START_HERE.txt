@@ -1,0 +1,10 @@
+START HIER
+
+1. Lees docs/MUST_READ_FIRST.md
+2. Lees docs/final-next-steps.md
+3. Kopieer server.cfg.example naar server.cfg
+4. Vul license key/database in
+5. Download QBCore en ox resources officieel
+6. Start met start-server.bat
+
+Bij errors: gebruik docs/resource-troubleshooting.md
