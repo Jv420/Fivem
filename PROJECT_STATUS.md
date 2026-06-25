@@ -1,6 +1,6 @@
 # Project status
 
-Starter update is nu via losse GitHub file commits op `main` gezet.
+Starter update staat op `main`.
 
 ## Toegevoegd
 
@@ -14,10 +14,24 @@ Starter update is nu via losse GitHub file commits op `main` gezet.
 - Nederlandse serverregels
 - Discord setup
 - Economy balance
-- Police/EMS/mechanic setup
+- Service/job setup plannen
 - Troubleshooting docs
 - Setup tools
 - Webshop/donation plan
+- Dealership starter
+- Company starter config
+- Property starter config
+- Plates and phone examples
+- RP workmap bundel in `notes-test.txt`
+
+## RP workmap bevat
+
+- Luxe opties
+- NL kenteken voorbeelden
+- NL telefoon voorbeelden
+- Service A/B/C planning
+- Advanced RP balancing
+- Lockpick/hotwire/chopshop concepten als FiveM gameplay
 
 ## Nog zelf downloaden
 
