@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#hud {
+  position: absolute;
+  left: 20px;
+  bottom: 28px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.box {
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: white;
+  background: rgba(8, 14, 28, 0.82);
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.wide {
+  min-width: 180px;
+}
