@@ -5,6 +5,10 @@ Config.OpenKey = 'F1'
 Config.ServerName = 'Delfzijl RP'
 Config.CityName = 'Delfzijl'
 
+Config.NumberPrefix = '06'
+Config.NumberLength = 8
+Config.MaxSmsLength = 220
+
 Config.Services = {
     {
         id = 'taxi',
