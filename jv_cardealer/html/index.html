@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delfzijl Auto Webshop</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app" class="hidden">
+        <aside class="sidebar">
+            <div class="logo">JV</div>
+            <h1>Delfzijl Auto Webshop</h1>
+            <p>Koop voertuigen met contant, bank of zwart geld.</p>
+            <div class="hint">ESC of Sluiten om terug te gaan</div>
+        </aside>
+
+        <main class="shop">
+            <header>
+                <div>
+                    <span class="eyebrow">Premium dealer</span>
+                    <h2>Voertuigen</h2>
+                </div>
+                <button id="closeBtn">Sluiten</button>
+            </header>
+
+            <section class="payment-box">
+                <label>Betaalmethode</label>
+                <div id="paymentList" class="payment-list"></div>
+            </section>
+
+            <section id="vehicleGrid" class="vehicle-grid"></section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
