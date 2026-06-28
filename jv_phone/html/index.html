@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JV Phone</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="phone" class="phone hidden">
+        <div class="phone-frame">
+            <div class="speaker"></div>
+            <div class="screen">
+                <header class="topbar">
+                    <span id="time">12:00</span>
+                    <span>5G ▰▰▰ 🔋</span>
+                </header>
+
+                <section class="hero">
+                    <p id="serverName">Delfzijl RP</p>
+                    <h1 id="cityName">Delfzijl</h1>
+                    <span>Service telefoon</span>
+                </section>
+
+                <nav class="tabs">
+                    <button class="tab active" data-page="services">Services</button>
+                    <button class="tab" data-page="contacts">Contacten</button>
+                    <button class="tab" data-page="info">Info</button>
+                </nav>
+
+                <main>
+                    <section id="services" class="page active">
+                        <div id="serviceList" class="service-list"></div>
+                    </section>
+
+                    <section id="contacts" class="page">
+                        <div id="contactList" class="contact-list"></div>
+                    </section>
+
+                    <section id="info" class="page">
+                        <div class="info-card">
+                            <h2>Hoe werkt dit?</h2>
+                            <p>Kies een service, typ kort wat je nodig hebt en verstuur je melding. Je locatie wordt automatisch meegestuurd.</p>
+                        </div>
+                        <div class="info-card">
+                            <h2>Commands</h2>
+                            <p><strong>/phone</strong> opent je telefoon.</p>
+                            <p><strong>/taxi bericht</strong> stuurt direct een taxi melding.</p>
+                        </div>
+                    </section>
+                </main>
+
+                <button id="closeBtn" class="close-btn">Sluiten</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-card">
+            <h2 id="modalTitle">Service</h2>
+            <p id="modalDesc">Beschrijf wat je nodig hebt.</p>
+            <textarea id="serviceMessage" maxlength="180" placeholder="Bijv: Ik heb een taxi nodig bij het gemeentehuis..."></textarea>
+            <div class="modal-actions">
+                <button id="cancelBtn">Annuleren</button>
+                <button id="sendBtn">Versturen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
