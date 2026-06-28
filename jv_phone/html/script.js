@@ -1,11 +1,17 @@
 let services = [];
 let contacts = [];
+let phoneData = { number: 'laden...', messages: [] };
 let selectedService = null;
 
 const phone = document.getElementById('phone');
 const modal = document.getElementById('modal');
 const serviceList = document.getElementById('serviceList');
 const contactList = document.getElementById('contactList');
+const smsList = document.getElementById('smsList');
+const smsNumber = document.getElementById('smsNumber');
+const smsMessage = document.getElementById('smsMessage');
+const smsSendBtn = document.getElementById('smsSendBtn');
+const myNumber = document.getElementById('myNumber');
 const closeBtn = document.getElementById('closeBtn');
 const cancelBtn = document.getElementById('cancelBtn');
 const sendBtn = document.getElementById('sendBtn');
@@ -65,6 +71,35 @@ function renderContacts() {
     });
 }
 
+function renderSms() {
+    myNumber.textContent = phoneData.number || 'onbekend';
+    smsList.innerHTML = '';
+
+    const messages = phoneData.messages || [];
+    if (messages.length === 0) {
+        smsList.innerHTML = '<div class="sms-empty">Nog geen SMS berichten.</div>';
+        return;
+    }
+
+    messages.forEach(message => {
+        const card = document.createElement('div');
+        card.className = 'sms-card';
+        card.innerHTML = `
+            <div class="sms-meta">
+                <strong>${message.fromName || 'Onbekend'}</strong>
+                <span>${message.from || ''} • ${message.time || ''}</span>
+            </div>
+            <p>${message.text || ''}</p>
+            <button class="reply-btn">Antwoorden</button>
+        `;
+        card.querySelector('.reply-btn').addEventListener('click', () => {
+            smsNumber.value = message.from || '';
+            smsMessage.focus();
+        });
+        smsList.appendChild(card);
+    });
+}
+
 function openModal(service) {
     selectedService = service;
     modalTitle.textContent = service.label;
@@ -82,10 +117,12 @@ function closeModal() {
 function setup(data) {
     services = data.services || services;
     contacts = data.contacts || contacts;
+    phoneData = data.phoneData || phoneData;
     serverName.textContent = data.serverName || 'Delfzijl RP';
     cityName.textContent = data.cityName || 'Delfzijl';
     renderServices();
     renderContacts();
+    renderSms();
 }
 
 function updateClock() {
@@ -104,6 +141,14 @@ window.addEventListener('message', (event) => {
     if (data.action === 'close') {
         phone.classList.add('hidden');
         closeModal();
+    }
+    if (data.action === 'phoneData') {
+        phoneData = data.phoneData || phoneData;
+        renderSms();
+    }
+    if (data.action === 'newSms') {
+        phoneData = data.phoneData || phoneData;
+        renderSms();
     }
 });
 
@@ -129,6 +174,14 @@ sendBtn.addEventListener('click', async () => {
 
     closeModal();
     post('closePhone');
+});
+
+smsSendBtn.addEventListener('click', async () => {
+    await post('sendSms', {
+        number: smsNumber.value,
+        message: smsMessage.value
+    });
+    smsMessage.value = '';
 });
 
 document.addEventListener('keyup', (event) => {
