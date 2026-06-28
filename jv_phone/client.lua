@@ -1,5 +1,5 @@
 local phoneOpen = false
-local lastCoords = nil
+local phoneData = { number = 'laden...', messages = {} }
 
 local function serviceById(id)
     for _, service in ipairs(Config.Services) do
@@ -10,16 +10,26 @@ local function serviceById(id)
     return nil
 end
 
-local function setPhoneVisible(state)
-    phoneOpen = state
-    SetNuiFocus(state, state)
+local function sendSetupMessage(action)
     SendNUIMessage({
-        action = state and 'open' or 'close',
+        action = action,
         serverName = Config.ServerName,
         cityName = Config.CityName,
         services = Config.Services,
-        contacts = Config.DefaultContacts
+        contacts = Config.DefaultContacts,
+        phoneData = phoneData
     })
+end
+
+local function setPhoneVisible(state)
+    phoneOpen = state
+    SetNuiFocus(state, state)
+
+    if state then
+        TriggerServerEvent('jv_phone:server:getPhoneData')
+    end
+
+    sendSetupMessage(state and 'open' or 'close')
 end
 
 RegisterCommand(Config.PhoneCommand, function()
@@ -44,7 +54,6 @@ RegisterNUICallback('requestService', function(data, cb)
 
     local ped = PlayerPedId()
     local coords = GetEntityCoords(ped)
-    lastCoords = coords
 
     TriggerServerEvent('jv_phone:server:requestService', service.id, message, {
         x = coords.x,
@@ -53,6 +62,23 @@ RegisterNUICallback('requestService', function(data, cb)
     })
 
     cb({ success = true })
+end)
+
+RegisterNUICallback('sendSms', function(data, cb)
+    TriggerServerEvent('jv_phone:server:sendSms', data.number, data.message)
+    cb('ok')
+end)
+
+RegisterNetEvent('jv_phone:client:setPhoneData', function(data)
+    phoneData = data or phoneData
+    SendNUIMessage({ action = 'phoneData', phoneData = phoneData })
+end)
+
+RegisterNetEvent('jv_phone:client:newSms', function(sms)
+    phoneData.messages = phoneData.messages or {}
+    table.insert(phoneData.messages, 1, sms)
+    SendNUIMessage({ action = 'newSms', sms = sms, phoneData = phoneData })
+    PlaySoundFrontend(-1, 'Text_Arrive_Tone', 'Phone_SoundSet_Default', true)
 end)
 
 RegisterNetEvent('jv_phone:client:serviceAlert', function(serviceId, playerName, message, coords)
@@ -97,11 +123,6 @@ end)
 
 CreateThread(function()
     Wait(1500)
-    SendNUIMessage({
-        action = 'setup',
-        serverName = Config.ServerName,
-        cityName = Config.CityName,
-        services = Config.Services,
-        contacts = Config.DefaultContacts
-    })
+    TriggerServerEvent('jv_phone:server:getPhoneData')
+    sendSetupMessage('setup')
 end)
