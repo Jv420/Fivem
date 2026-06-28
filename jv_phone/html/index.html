@@ -19,11 +19,12 @@
                 <section class="hero">
                     <p id="serverName">Delfzijl RP</p>
                     <h1 id="cityName">Delfzijl</h1>
-                    <span>Service telefoon</span>
+                    <span>Mijn nummer: <strong id="myNumber">laden...</strong></span>
                 </section>
 
                 <nav class="tabs">
                     <button class="tab active" data-page="services">Services</button>
+                    <button class="tab" data-page="sms">SMS</button>
                     <button class="tab" data-page="contacts">Contacten</button>
                     <button class="tab" data-page="info">Info</button>
                 </nav>
@@ -31,6 +32,16 @@
                 <main>
                     <section id="services" class="page active">
                         <div id="serviceList" class="service-list"></div>
+                    </section>
+
+                    <section id="sms" class="page">
+                        <div class="sms-compose">
+                            <input id="smsNumber" maxlength="14" placeholder="Telefoonnummer, bijv. 0612345678" />
+                            <textarea id="smsMessage" maxlength="220" placeholder="Typ je SMS..."></textarea>
+                            <button id="smsSendBtn">SMS versturen</button>
+                        </div>
+                        <h2 class="inbox-title">Inbox</h2>
+                        <div id="smsList" class="sms-list"></div>
                     </section>
 
                     <section id="contacts" class="page">
@@ -43,8 +54,14 @@
                             <p>Kies een service, typ kort wat je nodig hebt en verstuur je melding. Je locatie wordt automatisch meegestuurd.</p>
                         </div>
                         <div class="info-card">
+                            <h2>SMS systeem</h2>
+                            <p>Elke speler krijgt automatisch een eigen telefoonnummer. SMS berichten blijven opgeslagen in <strong>phone_data.json</strong>.</p>
+                        </div>
+                        <div class="info-card">
                             <h2>Commands</h2>
                             <p><strong>/phone</strong> opent je telefoon.</p>
+                            <p><strong>/mijnnummer</strong> toont jouw nummer.</p>
+                            <p><strong>/sms nummer bericht</strong> stuurt snel een SMS.</p>
                             <p><strong>/taxi bericht</strong> stuurt direct een taxi melding.</p>
                         </div>
                     </section>
